@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :elite_dangerous_ship_designer, EliteDangerousShipDesigner.Endpoint,
+config :ship_designer, ShipDesigner.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -10,10 +10,10 @@ config :elite_dangerous_ship_designer, EliteDangerousShipDesigner.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :elite_dangerous_ship_designer, EliteDangerousShipDesigner.Repo,
+config :ship_designer, ShipDesigner.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "edsd",
-  password: "edsd",
-  database: "elite_dangerous_ship_designer_test",
+  username: "ship_designer",
+  password: "ship_designer",
+  database: "ship_designer_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

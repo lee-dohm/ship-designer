@@ -1,3 +1,3 @@
-defmodule EliteDangerousShipDesigner.LayoutViewTest do
-  use EliteDangerousShipDesigner.ConnCase, async: true
+defmodule ShipDesigner.LayoutViewTest do
+  use ShipDesigner.ConnCase, async: true
 end

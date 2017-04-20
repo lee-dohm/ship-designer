@@ -1,9 +1,9 @@
-defmodule EliteDangerousShipDesigner.Mixfile do
+defmodule ShipDesigner.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :elite_dangerous_ship_designer,
+      app: :ship_designer,
       version: "0.0.1",
       elixir: "~> 1.2",
       elixirc_paths: elixirc_paths(Mix.env),
@@ -20,7 +20,7 @@ defmodule EliteDangerousShipDesigner.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {EliteDangerousShipDesigner, []},
+      mod: {ShipDesigner, []},
       applications: [
         :phoenix,
         :phoenix_pubsub,

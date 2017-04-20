@@ -1,14 +1,14 @@
-defmodule EliteDangerousShipDesigner.Endpoint do
-  use Phoenix.Endpoint, otp_app: :elite_dangerous_ship_designer
+defmodule ShipDesigner.Endpoint do
+  use Phoenix.Endpoint, otp_app: :ship_designer
 
-  socket "/socket", EliteDangerousShipDesigner.UserSocket
+  socket "/socket", ShipDesigner.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :elite_dangerous_ship_designer, gzip: false,
+    at: "/", from: :ship_designer, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -38,5 +38,5 @@ defmodule EliteDangerousShipDesigner.Endpoint do
     key: "_elite_dangerous_ship_designer_key",
     signing_salt: "MHaViEMV"
 
-  plug EliteDangerousShipDesigner.Router
+  plug ShipDesigner.Router
 end

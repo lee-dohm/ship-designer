@@ -6,15 +6,15 @@
 use Mix.Config
 
 # General application configuration
-config :elite_dangerous_ship_designer,
-  ecto_repos: [EliteDangerousShipDesigner.Repo]
+config :ship_designer,
+  ecto_repos: [ShipDesigner.Repo]
 
 # Configures the endpoint
-config :elite_dangerous_ship_designer, EliteDangerousShipDesigner.Endpoint,
+config :ship_designer, ShipDesigner.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "zGC0tSwddcb2VzPWLqqwPSUHOf+fP5dSHCBbOx0X8f8zBWoO/c9Z7Atsg35AvSSz",
-  render_errors: [view: EliteDangerousShipDesigner.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: EliteDangerousShipDesigner.PubSub,
+  render_errors: [view: ShipDesigner.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: ShipDesigner.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

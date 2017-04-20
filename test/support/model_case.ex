@@ -1,4 +1,4 @@
-defmodule EliteDangerousShipDesigner.ModelCase do
+defmodule ShipDesigner.ModelCase do
   @moduledoc """
   This module defines the test case to be used by
   model tests.
@@ -16,20 +16,20 @@ defmodule EliteDangerousShipDesigner.ModelCase do
 
   using do
     quote do
-      alias EliteDangerousShipDesigner.Repo
+      alias ShipDesigner.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import EliteDangerousShipDesigner.ModelCase
+      import ShipDesigner.ModelCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(EliteDangerousShipDesigner.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ShipDesigner.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(EliteDangerousShipDesigner.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(ShipDesigner.Repo, {:shared, self()})
     end
 
     :ok
@@ -59,7 +59,7 @@ defmodule EliteDangerousShipDesigner.ModelCase do
   """
   def errors_on(struct, data) do
     struct.__struct__.changeset(struct, data)
-    |> Ecto.Changeset.traverse_errors(&EliteDangerousShipDesigner.ErrorHelpers.translate_error/1)
+    |> Ecto.Changeset.traverse_errors(&ShipDesigner.ErrorHelpers.translate_error/1)
     |> Enum.flat_map(fn {key, errors} -> for msg <- errors, do: {key, msg} end)
   end
 end

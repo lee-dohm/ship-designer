@@ -1,5 +1,5 @@
-defmodule EliteDangerousShipDesigner.PageControllerTest do
-  use EliteDangerousShipDesigner.ConnCase
+defmodule ShipDesigner.PageControllerTest do
+  use ShipDesigner.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

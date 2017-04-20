@@ -1,3 +1,3 @@
-defmodule EliteDangerousShipDesigner.PageView do
-  use EliteDangerousShipDesigner.Web, :view
+defmodule ShipDesigner.PageView do
+  use ShipDesigner.Web, :view
 end

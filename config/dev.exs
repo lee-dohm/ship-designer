@@ -6,7 +6,7 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
-config :elite_dangerous_ship_designer, EliteDangerousShipDesigner.Endpoint,
+config :ship_designer, ShipDesigner.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -16,7 +16,7 @@ config :elite_dangerous_ship_designer, EliteDangerousShipDesigner.Endpoint,
 
 
 # Watch static and templates for browser reloading.
-config :elite_dangerous_ship_designer, EliteDangerousShipDesigner.Endpoint,
+config :ship_designer, ShipDesigner.Endpoint,
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
@@ -34,10 +34,10 @@ config :logger, :console, format: "[$level] $message\n"
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
-config :elite_dangerous_ship_designer, EliteDangerousShipDesigner.Repo,
+config :ship_designer, ShipDesigner.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "edsd",
-  password: "edsd",
-  database: "elite_dangerous_ship_designer_dev",
+  username: "ship_designer",
+  password: "ship_designer",
+  database: "ship_designer_dev",
   hostname: "localhost",
   pool_size: 10

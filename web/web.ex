@@ -1,12 +1,12 @@
-defmodule EliteDangerousShipDesigner.Web do
+defmodule ShipDesigner.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use EliteDangerousShipDesigner.Web, :controller
-      use EliteDangerousShipDesigner.Web, :view
+      use ShipDesigner.Web, :controller
+      use ShipDesigner.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -30,12 +30,12 @@ defmodule EliteDangerousShipDesigner.Web do
     quote do
       use Phoenix.Controller
 
-      alias EliteDangerousShipDesigner.Repo
+      alias ShipDesigner.Repo
       import Ecto
       import Ecto.Query
 
-      import EliteDangerousShipDesigner.Router.Helpers
-      import EliteDangerousShipDesigner.Gettext
+      import ShipDesigner.Router.Helpers
+      import ShipDesigner.Gettext
     end
   end
 
@@ -49,9 +49,9 @@ defmodule EliteDangerousShipDesigner.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import EliteDangerousShipDesigner.Router.Helpers
-      import EliteDangerousShipDesigner.ErrorHelpers
-      import EliteDangerousShipDesigner.Gettext
+      import ShipDesigner.Router.Helpers
+      import ShipDesigner.ErrorHelpers
+      import ShipDesigner.Gettext
     end
   end
 
@@ -65,10 +65,10 @@ defmodule EliteDangerousShipDesigner.Web do
     quote do
       use Phoenix.Channel
 
-      alias EliteDangerousShipDesigner.Repo
+      alias ShipDesigner.Repo
       import Ecto
       import Ecto.Query
-      import EliteDangerousShipDesigner.Gettext
+      import ShipDesigner.Gettext
     end
   end
 

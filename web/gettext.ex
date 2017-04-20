@@ -1,11 +1,11 @@
-defmodule EliteDangerousShipDesigner.Gettext do
+defmodule ShipDesigner.Gettext do
   @moduledoc """
   A module providing Internationalization with a gettext-based API.
 
   By using [Gettext](https://hexdocs.pm/gettext),
   your module gains a set of macros for translations, for example:
 
-      import EliteDangerousShipDesigner.Gettext
+      import ShipDesigner.Gettext
 
       # Simple translation
       gettext "Here is the string to translate"
@@ -20,5 +20,5 @@ defmodule EliteDangerousShipDesigner.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :elite_dangerous_ship_designer
+  use Gettext, otp_app: :ship_designer
 end

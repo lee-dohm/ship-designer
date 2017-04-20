@@ -1,5 +1,5 @@
-defmodule EliteDangerousShipDesigner.PageController do
-  use EliteDangerousShipDesigner.Web, :controller
+defmodule ShipDesigner.PageController do
+  use ShipDesigner.Web, :controller
 
   def index(conn, _params) do
     render conn, "index.html"

@@ -1,5 +1,5 @@
-defmodule EliteDangerousShipDesigner.Router do
-  use EliteDangerousShipDesigner.Web, :router
+defmodule ShipDesigner.Router do
+  use ShipDesigner.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,14 @@ defmodule EliteDangerousShipDesigner.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", EliteDangerousShipDesigner do
+  scope "/", ShipDesigner do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", EliteDangerousShipDesigner do
+  # scope "/api", ShipDesigner do
   #   pipe_through :api
   # end
 end

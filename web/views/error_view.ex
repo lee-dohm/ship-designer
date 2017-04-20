@@ -1,5 +1,5 @@
-defmodule EliteDangerousShipDesigner.ErrorView do
-  use EliteDangerousShipDesigner.Web, :view
+defmodule ShipDesigner.ErrorView do
+  use ShipDesigner.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"
