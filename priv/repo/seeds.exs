@@ -9,3 +9,5 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+{_, 0} = System.cmd("curl", ["-o", "priv/repo/modules.json", "https://eddb.io/archive/v5/modules.json"])
