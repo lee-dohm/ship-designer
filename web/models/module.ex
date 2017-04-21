@@ -1,4 +1,8 @@
 defmodule ShipDesigner.Module do
+  @moduledoc """
+  Represents a ship module.
+  """
+
   use ShipDesigner.Web, :model
 
   schema "modules" do
