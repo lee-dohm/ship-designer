@@ -12,13 +12,10 @@ html
 
   body
     .container
-      header.header
-        nav role="navigation"
-          ul.nav.nav-pills.pull-right
-            li
-              a href="http://www.phoenixframework.org/docs" Get Started
-
-        span.logo
+      .page-header
+        h1
+          ' Ship Designer
+          small for Elite: Dangerous
 
       p.alert.alert-info role="alert" = get_flash(@conn, :info)
       p.alert.alert-danger role="alert" = get_flash(@conn, :error)
