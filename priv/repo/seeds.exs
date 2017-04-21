@@ -10,4 +10,25 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
+defmodule Seeds do
+  def insert_module(record) do
+    changeset = ShipDesigner.Module.changeset(%ShipDesigner.Module{}, %{
+      name: record["group"]["name"],
+      category: record["group"]["category"],
+      class: record["class"],
+      rating: record["rating"],
+      price: record["price"],
+      mass: record["mass"],
+      power_draw: record["power_draw"]
+    })
+
+    ShipDesigner.Repo.insert!(changeset)
+  end
+end
+
 {_, 0} = System.cmd("curl", ["-o", "priv/repo/modules.json", "https://eddb.io/archive/v5/modules.json"])
+
+"priv/repo/modules.json"
+|> File.read!
+|> Poison.Parser.parse!
+|> Enum.each(&Seeds.insert_module/1)
