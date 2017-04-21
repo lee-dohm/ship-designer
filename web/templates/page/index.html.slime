@@ -1,4 +1,6 @@
 .jumbotron
-  h2 = gettext "Welcome to %{name}", name: "Phoenix!"
+  h2 = gettext "Welcome to Starship Designer"
   p.lead
-    | A productive web framework that<br/>does not compromise speed and maintainability.
+    ' An open source web application for creating, storing and sharing ship designs for the game
+    a href="http://www.elitedangerous.com" Elite: Dangerous
+    | .

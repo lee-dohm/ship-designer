@@ -7,14 +7,14 @@ html
     meta name="description" content="An open source web application for creating, storing and sharing ship designs for the game Elite: Dangerous"
     meta name="author" content="Lee Dohm"
 
-    title = gettext "ED Ship Designer"
+    title = gettext "Starship Designer"
     link rel="stylesheet" href="#{static_path(@conn, "/css/app.css")}"
 
   body
     .container
       .page-header
         h1
-          ' Ship Designer
+          ' Starship Designer
           small for Elite: Dangerous
 
       = if get_flash(@conn, :info) do
