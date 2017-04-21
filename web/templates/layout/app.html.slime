@@ -26,4 +26,7 @@ html
       main role="main"
         = render @view_module, @view_template, assigns
 
+      footer.text-center.text-muted
+        = gettext "Copyright © 2017 by Lee Dohm"
+
     script src="#{static_path(@conn, "/js/app.js")}"
