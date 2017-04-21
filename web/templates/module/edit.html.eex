@@ -1,0 +1,6 @@
+<h2>Edit module</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: module_path(@conn, :update, @module) %>
+
+<%= link "Back", to: module_path(@conn, :index) %>

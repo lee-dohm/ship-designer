@@ -1,0 +1,24 @@
+<h2>Listing modules</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for module <- @modules do %>
+    <tr>
+
+      <td class="text-right">
+        <%= link "Show", to: module_path(@conn, :show, module), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: module_path(@conn, :edit, module), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: module_path(@conn, :delete, module), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New module", to: module_path(@conn, :new) %>
