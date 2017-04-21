@@ -4,10 +4,10 @@ html
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=edge"
     meta name="viewport" content="width=device-width, initial-scale=1"
-    meta name="description" content=""
-    meta name="author" content=""
+    meta name="description" content="An open source web application for creating, storing and sharing ship designs for the game Elite: Dangerous"
+    meta name="author" content="Lee Dohm"
 
-    title Elite Dangerous Ship Designer
+    title = gettext "ED Ship Designer"
     link rel="stylesheet" href="#{static_path(@conn, "/css/app.css")}"
 
   body
@@ -17,8 +17,11 @@ html
           ' Ship Designer
           small for Elite: Dangerous
 
-      p.alert.alert-info role="alert" = get_flash(@conn, :info)
-      p.alert.alert-danger role="alert" = get_flash(@conn, :error)
+      = if get_flash(@conn, :info) do
+        p.alert.alert-info role="alert" = get_flash(@conn, :info)
+
+      = if get_flash(@conn, :error) do
+        p.alert.alert-danger role="alert" = get_flash(@conn, :error)
 
       main role="main"
         = render @view_module, @view_template, assigns
