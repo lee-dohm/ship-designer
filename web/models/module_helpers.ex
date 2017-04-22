@@ -4,5 +4,6 @@ defmodule ShipDesigner.ModuleHelpers do
   """
 
   def is_bulkhead?(module), do: module.category == "Bulkhead"
+  def is_life_support?(module), do: module.name == "Life Support"
   def is_weapon?(module), do: module.category == "Weapon Hardpoint"
 end

@@ -31,6 +31,7 @@ defmodule ShipDesigner.ModuleController do
 
     cond do
       is_bulkhead?(module) -> render(conn, "show_bulkhead_module.html", module: module)
+      is_life_support?(module) -> render(conn, "show_life_support_module.html", module: module)
       true -> render(conn, "show_default_module.html", module: module)
     end
   end

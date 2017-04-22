@@ -1,9 +1,16 @@
 defmodule ShipDesigner.ModuleView do
   use ShipDesigner.Web, :view
+  use Timex
 
   import Number.Delimit
 
   def bulkhead_ship(module), do: module.details["ship"]
+
+  def life_support_duration(module) do
+    module.details["duration"]
+    |> Duration.from_seconds
+    |> Timex.format_duration(:humanized)
+  end
 
   def weapon_mode(module), do: module.details["weapon_mode"]
 
