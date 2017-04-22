@@ -9,15 +9,19 @@ defmodule ShipDesigner.ModuleView do
     |> Map.get("ship")
   end
 
+  def weapon_mode(module) do
+    module.original
+    |> Poison.decode!
+    |> Map.get("weapon_mode")
+  end
+
   @doc """
   Formats the full name of the module for viewing.
-
-  If there is a valid size for the module, it returns the name prepended with the size. Otherwise,
-  it returns only the module's name.
   """
   def format_full_name(module) do
     cond do
       is_bulkhead?(module) -> "#{module.name} for #{bulkhead_ship(module)}"
+      is_weapon?(module) -> "#{format_size(module)} #{module.name} - #{weapon_mode(module)}"
       true -> "#{format_size(module)} #{module.name}"
     end
   end
