@@ -13,7 +13,7 @@ defmodule ShipDesigner.Module do
     field :price, :integer
     field :mass, :float
     field :power_draw, :float
-    field :original, :string
+    field :original, :map
 
     timestamps()
   end
