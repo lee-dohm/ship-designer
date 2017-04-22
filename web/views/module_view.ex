@@ -3,6 +3,12 @@ defmodule ShipDesigner.ModuleView do
 
   import Number.Delimit
 
+  def bulkhead_ship(module) do
+    module.original
+    |> Poison.decode!
+    |> Map.get("ship")
+  end
+
   @doc """
   Formats the full name of the module for viewing.
 
@@ -10,9 +16,9 @@ defmodule ShipDesigner.ModuleView do
   it returns only the module's name.
   """
   def format_full_name(module) do
-    case format_size(module) do
-      nil -> module.name
-      _ -> "#{format_size(module)} #{module.name}"
+    cond do
+      is_bulkhead?(module) -> "#{module.name} for #{bulkhead_ship(module)}"
+      true -> "#{format_size(module)} #{module.name}"
     end
   end
 
@@ -77,7 +83,7 @@ defmodule ShipDesigner.ModuleView do
   """
   def format_size(module) do
     cond do
-      module.category == "Bulkhead" -> nil
+      is_bulkhead?(module) -> nil
       true -> "#{module.class}#{module.rating}"
     end
   end

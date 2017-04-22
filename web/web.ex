@@ -39,6 +39,8 @@ defmodule ShipDesigner.Web do
 
       import ShipDesigner.Router.Helpers
       import ShipDesigner.Gettext
+
+      import ShipDesigner.ModuleHelpers
     end
   end
 
@@ -55,6 +57,8 @@ defmodule ShipDesigner.Web do
       import ShipDesigner.Router.Helpers
       import ShipDesigner.ErrorHelpers
       import ShipDesigner.Gettext
+
+      import ShipDesigner.ModuleHelpers
     end
   end
 

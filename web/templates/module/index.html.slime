@@ -3,7 +3,6 @@
 table.table.table-hover
   thead
     tr
-      th.text-right Size
       th Name
       th.text-right Price (CR)
       th.text-right Mass (T)

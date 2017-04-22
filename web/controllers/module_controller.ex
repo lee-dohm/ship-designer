@@ -28,7 +28,11 @@ defmodule ShipDesigner.ModuleController do
 
   def show(conn, %{"id" => id}) do
     module = Repo.get!(Module, id)
-    render(conn, "show.html", module: module)
+
+    cond do
+      is_bulkhead?(module) -> render(conn, "show_bulkhead.html", module: module)
+      true -> render(conn, "show_default.html", module: module)
+    end
   end
 
   def edit(conn, %{"id" => id}) do

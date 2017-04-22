@@ -1,7 +1,6 @@
 tr
-  td.text-right = format_size(@module)
   td
-    a href="#{module_path(@conn, :show, @module)}" = @module.name
+    a href="#{module_path(@conn, :show, @module)}" = format_full_name(@module)
   td.text-right = format_price(@module)
   td.text-right = @module.mass
   td.text-right = @module.power_draw
