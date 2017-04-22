@@ -64,7 +64,8 @@ defmodule Seeds do
       rating: record["rating"],
       price: record["price"],
       mass: record["mass"],
-      power_draw: record["power"]
+      power_draw: record["power"],
+      original: Poison.encode!(record, pretty: true)
     }
   end
 end
