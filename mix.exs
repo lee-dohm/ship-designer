@@ -51,6 +51,7 @@ defmodule ShipDesigner.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:phoenix_slime, "~> 0.8.0"},
+      {:number, "~> 0.4.1"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:ex_doc, "~> 0.14", only: :dev, runtime: false}
     ]

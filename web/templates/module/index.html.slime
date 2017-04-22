@@ -1,0 +1,13 @@
+.h2 = gettext "Listing modules"
+
+table.table.table-hover
+  thead
+    tr
+      th.text-right Size
+      th Name
+      th.text-right Price (CR)
+      th.text-right Mass (T)
+      th.text-right Power Draw (MW)
+      th Category
+  tbody
+    = render_many @modules, ShipDesigner.ModuleView, "module_list_item.html", conn: @conn
