@@ -1,0 +1,16 @@
+h2 = "#{format_size(@module)} #{@module.name}"
+
+.row
+  .col-md-2 Category
+  .col-md-10 = @module.category
+.row
+  .col-md-2 Price
+  .col-md-10 = "#{format_price(@module)} CR"
+.row
+  .col-md-2 Mass
+  .col-md-10 = "#{@module.mass} T"
+.row
+  .col-md-2 Power Draw
+  .col-md-10 = "#{@module.power_draw} MW"
+
+= link "Back", to: module_path(@conn, :index)

@@ -1,8 +1,0 @@
-<h2>Show module</h2>
-
-<ul>
-
-</ul>
-
-<%= link "Edit", to: module_path(@conn, :edit, @module) %>
-<%= link "Back", to: module_path(@conn, :index) %>

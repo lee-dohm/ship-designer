@@ -1,11 +1,8 @@
 tr
-  td.text-right
-    = unless @module.category == "Bulkhead" do
-      = "#{@module.class}#{@module.rating}"
+  td.text-right = format_size(@module)
   td
-    - show_link = module_path(@conn, :show, @module)
-    a href="#{show_link}" = @module.name
-  td.text-right = Number.Delimit.number_to_delimited(@module.price)
+    a href="#{module_path(@conn, :show, @module)}" = @module.name
+  td.text-right = format_price(@module)
   td.text-right = @module.mass
   td.text-right = @module.power_draw
   td = @module.category
