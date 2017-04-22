@@ -83,4 +83,10 @@ defmodule ShipDesigner.ModuleView do
       true -> "#{module.class}#{module.rating}"
     end
   end
+
+  def render_category(module), do: render __MODULE__, "show_category.html", module: module
+  def render_details(module), do: render __MODULE__, "show_details.html", module: module
+  def render_mass(module), do: render __MODULE__, "show_mass.html", module: module
+  def render_power_draw(module), do: render __MODULE__, "show_power_draw.html", module: module
+  def render_price(module), do: render __MODULE__, "show_price.html", module: module
 end

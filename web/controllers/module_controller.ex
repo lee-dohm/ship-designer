@@ -30,8 +30,8 @@ defmodule ShipDesigner.ModuleController do
     module = Repo.get!(Module, id)
 
     cond do
-      is_bulkhead?(module) -> render(conn, "show_bulkhead.html", module: module)
-      true -> render(conn, "show_default.html", module: module)
+      is_bulkhead?(module) -> render(conn, "show_bulkhead_module.html", module: module)
+      true -> render(conn, "show_default_module.html", module: module)
     end
   end
 

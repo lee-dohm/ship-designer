@@ -1,0 +1,3 @@
+.row
+  .col-md-2 Mass
+  .col-md-10 = format_mass(@module, :with_unit)

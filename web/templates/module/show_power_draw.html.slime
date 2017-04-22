@@ -1,0 +1,3 @@
+.row
+  .col-md-2 Power Draw
+  .col-md-10 = format_power_draw(@module, :with_unit)
