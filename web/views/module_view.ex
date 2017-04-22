@@ -44,22 +44,27 @@ defmodule ShipDesigner.ModuleView do
   end
 
   @doc """
-  Formats the power draw of the module for display.
+  Formats an amount of power for display.
 
   ## Options
 
-  * `:with_unit` - Displays the power draw with the unit designation
+  * `:with_unit` - Displays the amount of power with the unit designation
   """
-  def format_power_draw(module, options \\ %{})
+  def format_power(power, options \\ %{})
 
-  def format_power_draw(module, %{}), do: module.power_draw
+  def format_power(power, %{}), do: power
 
-  def format_power_draw(module, :with_unit) do
-    case module.power_draw do
+  def format_power(power, :with_unit) do
+    case power do
       nil -> "0 MW"
-      _ -> "#{module.power_draw} MW"
+      _ -> "#{power} MW"
     end
   end
+
+  @doc false
+  def format_power_draw(module, options \\ %{})
+
+  def format_power_draw(module, options), do: format_power(module.power_draw, options)
 
   @doc """
   Formats the price of the module for display.
@@ -91,9 +96,28 @@ defmodule ShipDesigner.ModuleView do
     end
   end
 
-  def render_category(module), do: render __MODULE__, "show_category.html", module: module
-  def render_details(module), do: render __MODULE__, "show_details.html", module: module
-  def render_mass(module), do: render __MODULE__, "show_mass.html", module: module
-  def render_power_draw(module), do: render __MODULE__, "show_power_draw.html", module: module
-  def render_price(module), do: render __MODULE__, "show_price.html", module: module
+  @doc """
+  Renders the category template for the given module.
+  """
+  def render_category(module), do: render "show_category.html", module: module
+
+  @doc """
+  Renders the details template for the given module.
+  """
+  def render_details(module), do: render "show_details.html", module: module
+
+  @doc """
+  Renders the mass template for the given module.
+  """
+  def render_mass(module), do: render "show_mass.html", module: module
+
+  @doc """
+  Renders the power draw template for the given module.
+  """
+  def render_power_draw(module), do: render "show_power_draw.html", module: module
+
+  @doc """
+  Renders the price template for the given module.
+  """
+  def render_price(module), do: render "show_price.html", module: module
 end

@@ -29,11 +29,7 @@ defmodule ShipDesigner.ModuleController do
   def show(conn, %{"id" => id}) do
     module = Repo.get!(Module, id)
 
-    cond do
-      is_bulkhead?(module) -> render(conn, "show_bulkhead_module.html", module: module)
-      is_life_support?(module) -> render(conn, "show_life_support_module.html", module: module)
-      true -> render(conn, "show_default_module.html", module: module)
-    end
+    render_module(conn, module)
   end
 
   def edit(conn, %{"id" => id}) do
@@ -66,5 +62,9 @@ defmodule ShipDesigner.ModuleController do
     conn
     |> put_flash(:info, "Module deleted successfully.")
     |> redirect(to: module_path(conn, :index))
+  end
+
+  defp render_module(conn, module) do
+    render(conn, "show_#{get_module_type(module)}_module.html", module: module)
   end
 end

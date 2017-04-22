@@ -4,8 +4,7 @@ h2
 = render_category(@module)
 = render_price(@module)
 = render_mass(@module)
-= render_power_draw(@module)
 .row
-  .col-md-2 = gettext("Duration")
-  .col-md-10 = life_support_duration(@module)
+  .col-md-2 = gettext("Power Produced")
+  .col-md-10 = format_power(@module.details["power_produced"], :with_unit)
 = render_details(@module)

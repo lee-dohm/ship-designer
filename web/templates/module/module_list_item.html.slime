@@ -3,5 +3,5 @@ tr
     a href="#{module_path(@conn, :show, @module)}" = format_full_name(@module)
   td.text-right = format_price(@module)
   td.text-right = @module.mass
-  td.text-right = @module.power_draw
+  td.text-right = format_power(@module.power_draw)
   td = @module.category
