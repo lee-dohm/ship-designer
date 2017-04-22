@@ -3,7 +3,7 @@ defmodule ShipDesigner.Repo.Migrations.AddOriginalColumnToModulesTable do
 
   def change do
     alter table(:modules) do
-      add :original, :map
+      add :details, :map
     end
   end
 end

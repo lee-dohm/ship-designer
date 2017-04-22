@@ -18,4 +18,4 @@ h2
   .col-md-10
     details
       summary EDDB Record
-      pre = Poison.encode!(@module.original, pretty: true)
+      pre = Poison.encode!(@module.details, pretty: true)

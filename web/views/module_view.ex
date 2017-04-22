@@ -3,9 +3,9 @@ defmodule ShipDesigner.ModuleView do
 
   import Number.Delimit
 
-  def bulkhead_ship(module), do: module.original["ship"]
+  def bulkhead_ship(module), do: module.details["ship"]
 
-  def weapon_mode(module), do: module.original["weapon_mode"]
+  def weapon_mode(module), do: module.details["weapon_mode"]
 
   @doc """
   Formats the full name of the module for viewing.

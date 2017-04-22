@@ -48,7 +48,7 @@ defmodule Seeds do
       price: record["price"],
       mass: record["mass"],
       power_draw: record["power"],
-      original: record
+      details: record
     }
   end
 end
