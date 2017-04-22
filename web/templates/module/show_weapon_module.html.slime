@@ -1,0 +1,8 @@
+h2
+  = format_full_name(@module)
+
+= render_category(@module)
+= render_price(@module)
+= render_mass(@module)
+= render_power_draw(@module)
+= render_details(@module)
