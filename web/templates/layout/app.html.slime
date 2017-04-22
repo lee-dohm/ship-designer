@@ -14,8 +14,10 @@ html
     .container
       .page-header
         h1
-          ' Starship Designer
-          small for Elite: Dangerous
+          - home_page = page_path(@conn, :index)
+          a href="#{home_page}"
+            | Starship Designer
+          small< for Elite: Dangerous
 
       = if get_flash(@conn, :info) do
         p.alert.alert-info role="alert" = get_flash(@conn, :info)
