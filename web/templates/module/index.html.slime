@@ -1,12 +1,12 @@
-.h2 = gettext "Listing modules"
+.h2 = gettext("Modules")
 
 table.table.table-hover
   thead
     tr
-      th Name
-      th.text-right Price (CR)
-      th.text-right Mass (T)
-      th.text-right Power Draw (MW)
-      th Category
+      th = gettext("Module")
+      th.text-right = gettext("Price (CR)")
+      th.text-right = gettext("Mass (T)")
+      th.text-right = gettext("Power Draw (MW)")
+      th = gettext("Category")
   tbody
     = render_many @modules, ShipDesigner.ModuleView, "module_list_item.html", conn: @conn

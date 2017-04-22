@@ -2,5 +2,5 @@
   .col-md-2
   .col-md-10
     details.module-details
-      summary EDDB Record
+      summary = gettext("EDDB Record")
       pre = Poison.encode!(@module.details, pretty: true)
