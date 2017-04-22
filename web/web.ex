@@ -58,6 +58,7 @@ defmodule ShipDesigner.Web do
       import ShipDesigner.ErrorHelpers
       import ShipDesigner.Gettext
 
+      import ShipDesigner.FormatHelpers
       import ShipDesigner.ModuleHelpers
     end
   end

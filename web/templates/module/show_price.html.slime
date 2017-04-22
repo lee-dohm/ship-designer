@@ -1,3 +1,3 @@
 .row
   .col-md-2 = gettext("Price")
-  .col-md-10 = format_price(@module, :with_unit)
+  .col-md-10 = format_money(@module.price, :with_unit)
