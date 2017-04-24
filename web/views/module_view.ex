@@ -2,8 +2,6 @@ defmodule ShipDesigner.ModuleView do
   use ShipDesigner.Web, :view
   use Timex
 
-  import Number.Delimit
-
   def bulkhead_ship(module), do: module.details["ship"]
 
   def life_support_duration(module) do

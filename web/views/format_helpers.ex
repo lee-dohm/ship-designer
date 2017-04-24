@@ -3,8 +3,6 @@ defmodule ShipDesigner.FormatHelpers do
   Conveniences for formatting common values.
   """
 
-  import Number.Delimit
-
   @doc """
   Formats an amount of mass for display.
 
@@ -14,7 +12,7 @@ defmodule ShipDesigner.FormatHelpers do
   """
   def format_mass(mass, options \\ %{})
 
-  def format_mass(mass, %{}), do: mass
+  def format_mass(mass, %{}), do: "#{mass}"
 
   def format_mass(mass, :with_unit) do
     case mass do
@@ -32,7 +30,7 @@ defmodule ShipDesigner.FormatHelpers do
   """
   def format_money(money, options \\ %{})
 
-  def format_money(money, %{}), do: Number.Delimit.number_to_delimited(money)
+  def format_money(money, %{}), do: "#{Number.Delimit.number_to_delimited(money)}"
 
   def format_money(money, :with_unit) do
     case money do
@@ -50,7 +48,7 @@ defmodule ShipDesigner.FormatHelpers do
   """
   def format_power(power, options \\ %{})
 
-  def format_power(power, %{}), do: power
+  def format_power(power, %{}), do: "#{power}"
 
   def format_power(power, :with_unit) do
     case power do
