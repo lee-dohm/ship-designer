@@ -12,6 +12,8 @@ function activateNavTab(path) {
 
   if (path.startsWith('/modules')) {
     tab = document.querySelector('#modules-tab')
+  } else if (path.startsWith('/ships')) {
+    tab = document.querySelector('#ships-tab')
   } else {
     tab = document.querySelector('#home-tab')
   }

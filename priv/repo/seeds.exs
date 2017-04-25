@@ -13,11 +13,18 @@
 defmodule Seeds do
   alias ShipDesigner.Module
   alias ShipDesigner.Repo
+  alias ShipDesigner.Ship
 
   @seconds_in_a_day 86_400
 
   def insert_module(record) do
     changeset = Module.changeset(%Module{}, to_module(record))
+
+    Repo.insert!(changeset)
+  end
+
+  def insert_ship(record) do
+    changeset = Ship.changeset(%Ship{}, to_ship(record))
 
     Repo.insert!(changeset)
   end
@@ -51,6 +58,26 @@ defmodule Seeds do
       details: record
     }
   end
+
+  defp to_ship(record) do
+    %{
+      name: record["name"],
+      manufacturer: record["manufacturer"],
+      length: record["length"],
+      width: record["width"],
+      height: record["height"],
+      type: record["type"],
+      price: record["price"],
+      top_speed: record["top_speed"],
+      boost_speed: record["boost_speed"],
+      maneuverability: record["maneuverability"],
+      shields: record["shields"],
+      armor: record["armor"],
+      hull_mass: record["hull_mass"],
+      pad_size: record["pad_size"],
+      mass_lock: record["mass_lock"]
+    }
+  end
 end
 
 Seeds.refresh("priv/repo/modules.json", "https://eddb.io/archive/v5/modules.json")
@@ -59,3 +86,8 @@ Seeds.refresh("priv/repo/modules.json", "https://eddb.io/archive/v5/modules.json
 |> File.read!
 |> Poison.Parser.parse!
 |> Enum.each(&Seeds.insert_module/1)
+
+"priv/repo/ships.json"
+|> File.read!
+|> Poison.Parser.parse!
+|> Enum.each(&Seeds.insert_ship/1)
