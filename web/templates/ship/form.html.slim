@@ -1,0 +1,66 @@
+= form_for @changeset, @action, fn f ->
+  = if @changeset.action do
+    .alert.alert-danger
+      p Oops, something went wrong! Please check the errors below.
+  .form-group
+    = label f, :name, class: "control-label"
+    = text_input f, :name, class: "form-control"
+    = error_tag f, :name
+  .form-group
+    = label f, :manufacturer, class: "control-label"
+    = text_input f, :manufacturer, class: "form-control"
+    = error_tag f, :manufacturer
+  .form-group
+    = label f, :length, class: "control-label"
+    = number_input f, :length, step: "any", class: "form-control"
+    = error_tag f, :length
+  .form-group
+    = label f, :width, class: "control-label"
+    = number_input f, :width, step: "any", class: "form-control"
+    = error_tag f, :width
+  .form-group
+    = label f, :height, class: "control-label"
+    = number_input f, :height, step: "any", class: "form-control"
+    = error_tag f, :height
+  .form-group
+    = label f, :type, class: "control-label"
+    = text_input f, :type, class: "form-control"
+    = error_tag f, :type
+  .form-group
+    = label f, :price, class: "control-label"
+    = number_input f, :price, class: "form-control"
+    = error_tag f, :price
+  .form-group
+    = label f, :top_speed, class: "control-label"
+    = number_input f, :top_speed, class: "form-control"
+    = error_tag f, :top_speed
+  .form-group
+    = label f, :boost_speed, class: "control-label"
+    = number_input f, :boost_speed, class: "form-control"
+    = error_tag f, :boost_speed
+  .form-group
+    = label f, :maneuverability, class: "control-label"
+    = number_input f, :maneuverability, class: "form-control"
+    = error_tag f, :maneuverability
+  .form-group
+    = label f, :shields, class: "control-label"
+    = number_input f, :shields, class: "form-control"
+    = error_tag f, :shields
+  .form-group
+    = label f, :armor, class: "control-label"
+    = number_input f, :armor, class: "form-control"
+    = error_tag f, :armor
+  .form-group
+    = label f, :hull_mass, class: "control-label"
+    = number_input f, :hull_mass, class: "form-control"
+    = error_tag f, :hull_mass
+  .form-group
+    = label f, :pad_size, class: "control-label"
+    = text_input f, :pad_size, class: "form-control"
+    = error_tag f, :pad_size
+  .form-group
+    = label f, :mass_lock, class: "control-label"
+    = number_input f, :mass_lock, class: "form-control"
+    = error_tag f, :mass_lock
+  .form-group
+    = submit "Submit", class: "btn btn-primary"

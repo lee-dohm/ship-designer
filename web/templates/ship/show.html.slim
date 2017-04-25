@@ -1,0 +1,52 @@
+h2 Show ship
+
+ul
+  li
+    strong Name:&nbsp;
+    = @ship.name
+  li
+    strong Manufacturer:&nbsp;
+    = @ship.manufacturer
+  li
+    strong Length:&nbsp;
+    = @ship.length
+  li
+    strong Width:&nbsp;
+    = @ship.width
+  li
+    strong Height:&nbsp;
+    = @ship.height
+  li
+    strong Type:&nbsp;
+    = @ship.type
+  li
+    strong Price:&nbsp;
+    = @ship.price
+  li
+    strong Top speed:&nbsp;
+    = @ship.top_speed
+  li
+    strong Boost speed:&nbsp;
+    = @ship.boost_speed
+  li
+    strong Maneuverability:&nbsp;
+    = @ship.maneuverability
+  li
+    strong Shields:&nbsp;
+    = @ship.shields
+  li
+    strong Armor:&nbsp;
+    = @ship.armor
+  li
+    strong Hull mass:&nbsp;
+    = @ship.hull_mass
+  li
+    strong Pad size:&nbsp;
+    = @ship.pad_size
+  li
+    strong Mass lock:&nbsp;
+    = @ship.mass_lock
+
+= link "Edit", to: ship_path(@conn, :edit, @ship)
+| &nbsp;
+= link "Back", to: ship_path(@conn, :index)

@@ -19,6 +19,7 @@ defmodule ShipDesigner.Router do
     get "/", PageController, :index
 
     resources "/modules", ModuleController
+    resources "/ships", ShipController
   end
 
   # Other scopes may use custom stacks.

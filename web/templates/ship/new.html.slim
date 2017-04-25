@@ -1,0 +1,5 @@
+h2 New ship
+
+= render "form.html", changeset: @changeset, action: ship_path(@conn, :create)
+
+= link "Back", to: ship_path(@conn, :index)
