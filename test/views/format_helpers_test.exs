@@ -3,6 +3,22 @@ defmodule ShipDesigner.FormatHelpers.Test do
 
   alias ShipDesigner.FormatHelpers
 
+  test "format_distance returns a string representation of the number" do
+    assert FormatHelpers.format_distance(12.3) == "12.3"
+  end
+
+  test "format_distance returns an empty string when given nil without asking for units" do
+    assert FormatHelpers.format_distance(nil) == ""
+  end
+
+  test "format_distance returns a string representation of the number and units" do
+    assert FormatHelpers.format_distance(12.3, :with_unit) == "12.3 km"
+  end
+
+  test "format_distance returns zero when given nil and asked for units" do
+    assert FormatHelpers.format_distance(nil, :with_unit) == "0 km"
+  end
+
   test "format_mass returns a string representation of the number" do
     assert FormatHelpers.format_mass(15) == "15"
   end

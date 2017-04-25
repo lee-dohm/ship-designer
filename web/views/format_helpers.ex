@@ -4,6 +4,24 @@ defmodule ShipDesigner.FormatHelpers do
   """
 
   @doc """
+  Formats an amount of distance for display.
+
+  ## Options
+
+  * `:with_unit` - Displays the distance with the unit designation
+  """
+  def format_distance(distance, options \\ %{})
+
+  def format_distance(distance, %{}), do: "#{distance}"
+
+  def format_distance(distance, :with_unit) do
+    case distance do
+      nil -> "0 km"
+      _ -> "#{distance} km"
+    end
+  end
+
+  @doc """
   Formats an amount of mass for display.
 
   ## Options
