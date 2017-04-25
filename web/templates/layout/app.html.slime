@@ -19,6 +19,14 @@ html
             | Starship Designer
           small< for Elite: Dangerous
 
+      header role="header"
+        ul.nav.nav-tabs
+          li#home-tab role="presentation"
+            a href="#{home_page}" = gettext "Home"
+          li#modules-tab role="presentation"
+            - modules_page = module_path(@conn, :index)
+            a href="#{modules_page}" = gettext "Modules"
+
       = if get_flash(@conn, :info) do
         p.alert.alert-info role="alert" = get_flash(@conn, :info)
 
