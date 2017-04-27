@@ -13,15 +13,8 @@ defmodule ShipDesigner.FormatHelpers do
   def format_distance(distance, options \\ %{})
 
   def format_distance(distance, %{}), do: "#{distance}"
-  def format_distance(distance, :with_unit), do: format_distance(distance, %{with_unit: "km"})
-
-  def format_distance(distance, with_unit: unit) do
-    case distance do
-      nil -> "0 #{unit}"
-      _ -> "#{distance} #{unit}"
-    end
-  end
-
+  def format_distance(distance, :with_unit), do: format_amount(distance, "km")
+  def format_distance(distance, with_unit: unit), do: format_amount(distance, unit)
 
   @doc """
   Formats an amount of mass for display.
@@ -33,14 +26,8 @@ defmodule ShipDesigner.FormatHelpers do
   def format_mass(mass, options \\ %{})
 
   def format_mass(mass, %{}), do: "#{mass}"
-  def format_mass(mass, :with_unit), do: format_mass(mass, with_unit: "T")
-
-  def format_mass(mass, with_unit: unit) do
-    case mass do
-      nil -> "0 #{unit}"
-      _ -> "#{mass} #{unit}"
-    end
-  end
+  def format_mass(mass, :with_unit), do: format_amount(mass, "T")
+  def format_mass(mass, with_unit: unit), do: format_amount(mass, unit)
 
   @doc """
   Formats an amount of money for display.
@@ -52,13 +39,7 @@ defmodule ShipDesigner.FormatHelpers do
   def format_money(money, options \\ %{})
 
   def format_money(money, %{}), do: "#{Number.Delimit.number_to_delimited(money)}"
-
-  def format_money(money, :with_unit) do
-    case money do
-      nil -> "0 CR"
-      _ -> "#{Number.Delimit.number_to_delimited(money)} CR"
-    end
-  end
+  def format_money(money, :with_unit), do: format_amount(money, &Number.Delimit.number_to_delimited/1, "CR")
 
   @doc """
   Formats an amount of power for display.
@@ -70,13 +51,7 @@ defmodule ShipDesigner.FormatHelpers do
   def format_power(power, options \\ %{})
 
   def format_power(power, %{}), do: "#{power}"
-
-  def format_power(power, :with_unit) do
-    case power do
-      nil -> "0 MW"
-      _ -> "#{power} MW"
-    end
-  end
+  def format_power(power, :with_unit), do: format_amount(power, "MW")
 
   @doc """
   Formats a speed for display.
@@ -88,12 +63,19 @@ defmodule ShipDesigner.FormatHelpers do
   def format_speed(speed, options \\ %{})
 
   def format_speed(speed, %{}), do: "#{speed}"
-  def format_speed(speed, :with_unit), do: format_speed(speed, with_unit: "m/s")
+  def format_speed(speed, :with_unit), do: format_amount(speed, "m/s")
 
-  def format_speed(speed, with_unit: unit) do
-    case speed do
+  defp format_amount(amount, unit) do
+    case amount do
       nil -> "0 #{unit}"
-      _ -> "#{speed} #{unit}"
+      _ -> "#{amount} #{unit}"
+    end
+  end
+
+  defp format_amount(amount, formatter, unit) do
+    case amount do
+      nil -> "0 #{unit}"
+      _ -> "#{formatter.(amount)} #{unit}"
     end
   end
 end
