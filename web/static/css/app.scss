@@ -15,3 +15,14 @@ footer {
   border-top: 1px solid #eeeeee;
   padding-top: 0.5em;
 }
+
+.record {
+  .attribute {
+    @extend .col-md-2;
+    font-weight: bold;
+  }
+
+  .value {
+    @extend .col-md-10;
+  }
+}

@@ -1,3 +1,3 @@
 .row
-  .col-md-2 = gettext("Category")
-  .col-md-10 = @module.category
+  .attribute = gettext("Category")
+  .value = @module.category

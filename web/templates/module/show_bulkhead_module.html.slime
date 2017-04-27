@@ -1,10 +1,11 @@
 h2
   = format_full_name(@module)
 
-= render_category(@module)
-= render_price(@module)
-= render_mass(@module)
-.row
-  .col-md-2 = gettext("Ship")
-  .col-md-10 = bulkhead_ship(@module)
-= render_details(@module)
+.record
+  = render_category(@module)
+  = render_price(@module)
+  = render_mass(@module)
+  .row
+    .attribute = gettext("Ship")
+    .value = bulkhead_ship(@module)
+  = render_details(@module)
