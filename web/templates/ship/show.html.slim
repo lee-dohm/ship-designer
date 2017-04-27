@@ -1,52 +1,45 @@
-h2 Show ship
+h2 = @ship.name
 
-ul
-  li
-    strong Name:&nbsp;
-    = @ship.name
-  li
-    strong Manufacturer:&nbsp;
-    = @ship.manufacturer
-  li
-    strong Length:&nbsp;
-    = @ship.length
-  li
-    strong Width:&nbsp;
-    = @ship.width
-  li
-    strong Height:&nbsp;
-    = @ship.height
-  li
-    strong Type:&nbsp;
-    = @ship.type
-  li
-    strong Price:&nbsp;
-    = @ship.price
-  li
-    strong Top speed:&nbsp;
-    = @ship.top_speed
-  li
-    strong Boost speed:&nbsp;
-    = @ship.boost_speed
-  li
-    strong Maneuverability:&nbsp;
-    = @ship.maneuverability
-  li
-    strong Shields:&nbsp;
-    = @ship.shields
-  li
-    strong Armor:&nbsp;
-    = @ship.armor
-  li
-    strong Hull mass:&nbsp;
-    = @ship.hull_mass
-  li
-    strong Pad size:&nbsp;
-    = @ship.pad_size
-  li
-    strong Mass lock:&nbsp;
-    = @ship.mass_lock
-
-= link "Edit", to: ship_path(@conn, :edit, @ship)
-| &nbsp;
-= link "Back", to: ship_path(@conn, :index)
+.record
+  .row
+    .attribute = gettext "Manufacturer"
+    .value = @ship.manufacturer
+  .row
+    .attribute = gettext "Length"
+    .value = @ship.length
+  .row
+    .attribute = gettext "Width"
+    .value = @ship.width
+  .row
+    .attribute = gettext "Height"
+    .value = @ship.height
+  .row
+    .attribute = gettext "Type"
+    .value = @ship.type
+  .row
+    .attribute = gettext "Price"
+    .value = format_money(@ship.price, :with_unit)
+  .row
+    .attribute = gettext "Top Speed"
+    .value = @ship.top_speed
+  .row
+    .attribute = gettext "Boost Speed"
+    .value = @ship.boost_speed
+  .row
+    .attribute = gettext "Maneuverability"
+    .value = @ship.maneuverability
+  .row
+    .attribute = gettext "Shields"
+    .value = @ship.shields
+  .row
+    .attribute = gettext "Armor"
+    .value = @ship.armor
+  .row
+    .attribute = gettext "Hull Mass"
+    .value = @ship.hull_mass
+  .row
+    .attribute = gettext "Pad Size"
+    .value = @ship.pad_size
+  .row
+    .attribute = gettext "Mass Lock Factor"
+    .value = @ship.mass_lock

@@ -1,47 +1,18 @@
-h2 Listing ships
-
-table.table
+table.table.table-hover
   thead
     tr
-      th Name
-      th Manufacturer
-      th Length
-      th Width
-      th Height
-      th Type
-      th Price
-      th Top speed
-      th Boost speed
-      th Maneuverability
-      th Shields
-      th Armor
-      th Hull mass
-      th Pad size
-      th Mass lock
-      th
+      th = gettext "Name"
+      th = gettext "Manufacturer"
+      th = gettext "Dimensions"
+      th = gettext "Type"
+      th = gettext "Price (CR)"
+      th = gettext "Top Speed (m/s)"
+      th = gettext "Boost Speed (m/s)"
+      th = gettext "Maneuverability"
+      th = gettext "Shields"
+      th = gettext "Armor"
+      th = gettext "Hull Mass (T)"
+      th = gettext "Pad Size"
+      th = gettext "Mass Lock Factor"
   tbody
-    = for ship <- @ships do
-      tr
-        td= ship.name
-        td= ship.manufacturer
-        td= ship.length
-        td= ship.width
-        td= ship.height
-        td= ship.type
-        td= ship.price
-        td= ship.top_speed
-        td= ship.boost_speed
-        td= ship.maneuverability
-        td= ship.shields
-        td= ship.armor
-        td= ship.hull_mass
-        td= ship.pad_size
-        td= ship.mass_lock
-        td class="text-right"
-          = link "Show", to: ship_path(@conn, :show, ship), class: "btn btn-default btn-xs"
-          | &nbsp;
-          = link "Edit", to: ship_path(@conn, :edit, ship), class: "btn btn-default btn-xs"
-          | &nbsp;
-          = link "Delete", to: ship_path(@conn, :delete, ship), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
-
-= link "New ship", to: ship_path(@conn, :new)
+    = render_many(@ships, ShipDesigner.ShipView, "index_item.html", conn: @conn)

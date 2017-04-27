@@ -17,6 +17,8 @@ footer {
 }
 
 .record {
+  padding-bottom: 1em;
+
   .attribute {
     @extend .col-md-2;
     font-weight: bold;
