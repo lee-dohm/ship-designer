@@ -6,13 +6,13 @@ h2 = @ship.name
     .value = @ship.manufacturer
   .row
     .attribute = gettext "Length"
-    .value = @ship.length
+    .value = format_distance(@ship.length, with_unit: "m")
   .row
     .attribute = gettext "Width"
-    .value = @ship.width
+    .value = format_distance(@ship.width, with_unit: "m")
   .row
     .attribute = gettext "Height"
-    .value = @ship.height
+    .value = format_distance(@ship.height, with_unit: "m")
   .row
     .attribute = gettext "Type"
     .value = @ship.type
@@ -21,10 +21,10 @@ h2 = @ship.name
     .value = format_money(@ship.price, :with_unit)
   .row
     .attribute = gettext "Top Speed"
-    .value = @ship.top_speed
+    .value = format_speed(@ship.top_speed, :with_unit)
   .row
     .attribute = gettext "Boost Speed"
-    .value = @ship.boost_speed
+    .value = format_speed(@ship.boost_speed, :with_unit)
   .row
     .attribute = gettext "Maneuverability"
     .value = @ship.maneuverability
@@ -36,7 +36,7 @@ h2 = @ship.name
     .value = @ship.armor
   .row
     .attribute = gettext "Hull Mass"
-    .value = @ship.hull_mass
+    .value = format_mass(@ship.hull_mass, :with_unit)
   .row
     .attribute = gettext "Pad Size"
     .value = @ship.pad_size
