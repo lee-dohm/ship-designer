@@ -14,21 +14,18 @@ html
     .container
       .page-header
         h1
-          - home_page = page_path(@conn, :index)
-          a href="#{home_page}"
+          a href="#{page_path(@conn, :index)}"
             | Starship Designer
           small< for Elite: Dangerous
 
       header role="header"
         ul.nav.nav-tabs
           li#home-tab role="presentation"
-            a href="#{home_page}" = gettext "Home"
+            a href="#{page_path(@conn, :index)}" = gettext "Home"
           li#modules-tab role="presentation"
-            - modules_page = module_path(@conn, :index)
-            a href="#{modules_page}" = gettext "Modules"
+            a href="#{module_path(@conn, :index)}" = gettext "Modules"
           li#ships-tab role="presentation"
-            - ships_page = ship_path(@conn, :index)
-            a href="#{ships_page}" = gettext "Ships"
+            a href="#{ship_path(@conn, :index)}" = gettext "Ships"
 
       = if get_flash(@conn, :info) do
         p.alert.alert-info role="alert" = get_flash(@conn, :info)
