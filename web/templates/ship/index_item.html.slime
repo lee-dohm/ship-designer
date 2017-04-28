@@ -1,15 +1,11 @@
 tr
   td
     a href="#{ship_path(@conn, :show, @ship)}" = @ship.name
-  td = @ship.manufacturer
-  td = "#{@ship.length} x #{@ship.width} x #{@ship.height}"
   td = @ship.type
   td = format_money(@ship.price)
   td = @ship.top_speed
   td = @ship.boost_speed
-  td = @ship.maneuverability
   td = @ship.shields
   td = @ship.armor
   td = @ship.hull_mass
   td = @ship.pad_size |> String.slice(0..0)
-  td = @ship.mass_lock

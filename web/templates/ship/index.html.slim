@@ -2,17 +2,13 @@ table.table.table-hover
   thead
     tr
       th = gettext "Name"
-      th = gettext "Manufacturer"
-      th = gettext "Dimensions (m)"
       th = gettext "Type"
       th = gettext "Price (CR)"
       th = gettext "Top Speed (m/s)"
       th = gettext "Boost Speed (m/s)"
-      th = gettext "Maneuverability"
       th = gettext "Shields"
       th = gettext "Armor"
       th = gettext "Hull Mass (T)"
       th = gettext "Pad Size"
-      th = gettext "Mass Lock Factor"
   tbody
     = render_many(@ships, ShipDesigner.ShipView, "index_item.html", conn: @conn)
