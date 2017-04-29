@@ -22,6 +22,13 @@
     "internals": {
       "1": 2,
       "2": 2
-    }
+    },
+    "power_plant_size": 2,
+    "thruster_size": 2,
+    "fsd_size": 2,
+    "life_support_size": 1,
+    "power_distributor_size": 1,
+    "sensor_size": 1,
+    "fuel_tank_size": 1
   }
 ]

@@ -77,7 +77,14 @@ defmodule Seeds do
       pad_size: record["pad_size"],
       mass_lock: record["mass_lock"],
       hardpoints: record["hardpoints"],
-      internals: record["internals"]
+      internals: record["internals"],
+      power_plant_size: record["power_plant_size"],
+      thruster_size: record["thruster_size"],
+      fsd_size: record["fsd_size"],
+      life_support_size: record["life_support_size"],
+      power_distributor_size: record["power_distributor_size"],
+      sensor_size: record["sensor_size"],
+      fuel_tank_size: record["fuel_tank_size"]
     }
   end
 end

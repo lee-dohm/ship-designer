@@ -27,4 +27,8 @@ footer {
   .value {
     @extend .col-md-10;
   }
+
+  .value-short {
+    @extend .col-md-4;
+  }
 }

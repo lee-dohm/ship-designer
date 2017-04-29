@@ -19,6 +19,13 @@ defmodule ShipDesigner.Ship do
     field :mass_lock, :integer
     field :hardpoints, :map
     field :internals, :map
+    field :power_plant_size, :integer
+    field :thruster_size, :integer
+    field :fsd_size, :integer
+    field :life_support_size, :integer
+    field :power_distributor_size, :integer
+    field :sensor_size, :integer
+    field :fuel_tank_size, :integer
 
     timestamps()
   end
@@ -45,7 +52,14 @@ defmodule ShipDesigner.Ship do
          :pad_size,
          :mass_lock,
          :hardpoints,
-         :internals
+         :internals,
+         :power_plant_size,
+         :thruster_size,
+         :fsd_size,
+         :life_support_size,
+         :power_distributor_size,
+         :sensor_size,
+         :fuel_tank_size
        ])
     |> validate_required([
          :name,
@@ -64,7 +78,14 @@ defmodule ShipDesigner.Ship do
          :pad_size,
          :mass_lock,
          :hardpoints,
-         :internals
+         :internals,
+         :power_plant_size,
+         :thruster_size,
+         :fsd_size,
+         :life_support_size,
+         :power_distributor_size,
+         :sensor_size,
+         :fuel_tank_size
        ])
   end
 end

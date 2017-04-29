@@ -2,38 +2,35 @@ h2 = @ship.name
 
 .record
   .row
-    .attribute = gettext "Manufacturer"
-    .value = @ship.manufacturer
-  .row
-    .attribute = gettext "Length"
-    .value = format_distance(@ship.length, with_unit: "m")
-  .row
-    .attribute = gettext "Width"
-    .value = format_distance(@ship.width, with_unit: "m")
-  .row
-    .attribute = gettext "Height"
-    .value = format_distance(@ship.height, with_unit: "m")
-  .row
     .attribute = gettext "Type"
-    .value = @ship.type
+    .value-short = @ship.type
+    .attribute = gettext "Manufacturer"
+    .value-short = @ship.manufacturer
   .row
     .attribute = gettext "Price"
-    .value = format_money(@ship.price, :with_unit)
+    .value-short = format_money(@ship.price, :with_unit)
+    .attribute = gettext "Length"
+    .value-short = format_distance(@ship.length, with_unit: "m")
   .row
     .attribute = gettext "Top Speed"
-    .value = format_speed(@ship.top_speed, :with_unit)
+    .value-short = format_speed(@ship.top_speed, :with_unit)
+    .attribute = gettext "Width"
+    .value-short = format_distance(@ship.width, with_unit: "m")
   .row
     .attribute = gettext "Boost Speed"
-    .value = format_speed(@ship.boost_speed, :with_unit)
-  .row
-    .attribute = gettext "Maneuverability"
-    .value = @ship.maneuverability
+    .value-short = format_speed(@ship.boost_speed, :with_unit)
+    .attribute = gettext "Height"
+    .value-short = format_distance(@ship.height, with_unit: "m")
   .row
     .attribute = gettext "Shields"
-    .value = @ship.shields
+    .value-short = @ship.shields
+    .attribute = gettext "Maneuverability"
+    .value-short = @ship.maneuverability
   .row
     .attribute = gettext "Armor"
-    .value = @ship.armor
+    .value-short = @ship.armor
+    .attribute = gettext "Mass Lock Factor"
+    .value-short = @ship.mass_lock
   .row
     .attribute = gettext "Hull Mass"
     .value = format_mass(@ship.hull_mass, :with_unit)
@@ -41,8 +38,26 @@ h2 = @ship.name
     .attribute = gettext "Pad Size"
     .value = @ship.pad_size
   .row
-    .attribute = gettext "Mass Lock Factor"
-    .value = @ship.mass_lock
+    .attribute = gettext "Power Plant Size"
+    .value = @ship.power_plant_size
+  .row
+    .attribute = gettext "Thruster Size"
+    .value = @ship.thruster_size
+  .row
+    .attribute = gettext "FSD Size"
+    .value = @ship.fsd_size
+  .row
+    .attribute = gettext "Life Support Size"
+    .value = @ship.life_support_size
+  .row
+    .attribute = gettext "Power Distributor Size"
+    .value = @ship.power_distributor_size
+  .row
+    .attribute = gettext "Sensor Size"
+    .value = @ship.sensor_size
+  .row
+    .attribute = gettext "Fuel Tank Size"
+    .value = @ship.fuel_tank_size
   .row
     .attribute = gettext "Hardpoints"
     .value

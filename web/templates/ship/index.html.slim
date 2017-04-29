@@ -3,12 +3,12 @@ table.table.table-hover
     tr
       th = gettext "Name"
       th = gettext "Type"
-      th = gettext "Price (CR)"
-      th = gettext "Top Speed (m/s)"
-      th = gettext "Boost Speed (m/s)"
-      th = gettext "Shields"
-      th = gettext "Armor"
-      th = gettext "Hull Mass (T)"
+      th.text-right = gettext "Price (CR)"
+      th.text-right = gettext "Top Speed (m/s)"
+      th.text-right = gettext "Boost Speed (m/s)"
+      th.text-right = gettext "Shields"
+      th.text-right = gettext "Armor"
+      th.text-right = gettext "Hull Mass (T)"
       th = gettext "Pad Size"
   tbody
     = render_many(@ships, ShipDesigner.ShipView, "index_item.html", conn: @conn)
