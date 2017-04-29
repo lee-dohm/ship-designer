@@ -43,3 +43,15 @@ h2 = @ship.name
   .row
     .attribute = gettext "Mass Lock Factor"
     .value = @ship.mass_lock
+  .row
+    .attribute = gettext "Hardpoints"
+    .value
+      = Enum.map format_hardpoints(@ship.hardpoints), fn hardpoint ->
+        = hardpoint
+        br
+  .row
+    .attribute = gettext "Internals"
+    .value
+      = Enum.map format_internals(@ship.internals), fn internal ->
+        = internal
+        br

@@ -14,6 +14,14 @@
     "armor": 108,
     "hull_mass": 25,
     "pad_size": "Small",
-    "mass_lock": 6
+    "mass_lock": 6,
+    "hardpoints": {
+      "utility": 2,
+      "small": 2
+    },
+    "internals": {
+      "1": 2,
+      "2": 2
+    }
   }
 ]

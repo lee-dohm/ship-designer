@@ -17,6 +17,8 @@ defmodule ShipDesigner.Ship do
     field :hull_mass, :integer
     field :pad_size, :string
     field :mass_lock, :integer
+    field :hardpoints, :map
+    field :internals, :map
 
     timestamps()
   end
@@ -26,7 +28,43 @@ defmodule ShipDesigner.Ship do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :manufacturer, :length, :width, :height, :type, :price, :top_speed, :boost_speed, :maneuverability, :shields, :armor, :hull_mass, :pad_size, :mass_lock])
-    |> validate_required([:name, :manufacturer, :length, :width, :height, :type, :price, :top_speed, :boost_speed, :maneuverability, :shields, :armor, :hull_mass, :pad_size, :mass_lock])
+    |> cast(params, [
+         :name,
+         :manufacturer,
+         :length,
+         :width,
+         :height,
+         :type,
+         :price,
+         :top_speed,
+         :boost_speed,
+         :maneuverability,
+         :shields,
+         :armor,
+         :hull_mass,
+         :pad_size,
+         :mass_lock,
+         :hardpoints,
+         :internals
+       ])
+    |> validate_required([
+         :name,
+         :manufacturer,
+         :length,
+         :width,
+         :height,
+         :type,
+         :price,
+         :top_speed,
+         :boost_speed,
+         :maneuverability,
+         :shields,
+         :armor,
+         :hull_mass,
+         :pad_size,
+         :mass_lock,
+         :hardpoints,
+         :internals
+       ])
   end
 end

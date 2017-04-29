@@ -75,7 +75,9 @@ defmodule Seeds do
       armor: record["armor"],
       hull_mass: record["hull_mass"],
       pad_size: record["pad_size"],
-      mass_lock: record["mass_lock"]
+      mass_lock: record["mass_lock"],
+      hardpoints: record["hardpoints"],
+      internals: record["internals"]
     }
   end
 end

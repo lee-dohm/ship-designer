@@ -16,6 +16,18 @@ defmodule ShipDesigner.FormatHelpers do
   def format_distance(distance, :with_unit), do: format_amount(distance, "km")
   def format_distance(distance, with_unit: unit), do: format_amount(distance, unit)
 
+  def format_hardpoints(hardpoints) do
+    ["utility", "small", "medium", "large", "huge"]
+    |> Enum.map(fn(name) -> format_hardpoint(hardpoints, name) end)
+    |> Enum.reject(fn(text) -> text == "" end)
+  end
+
+  def format_internals(internals) do
+    (1..6)
+    |> Enum.map(fn(index) -> format_internal(internals, "#{index}") end)
+    |> Enum.reject(fn(text) -> text == "" end)
+  end
+
   @doc """
   Formats an amount of mass for display.
 
@@ -77,5 +89,23 @@ defmodule ShipDesigner.FormatHelpers do
       nil -> "0 #{unit}"
       _ -> "#{formatter.(amount)} #{unit}"
     end
+  end
+
+  defp format_component(nil, _), do: ""
+
+  defp format_component(number, description) do
+    "#{number} #{description}"
+  end
+
+  defp format_hardpoint(hardpoints, name = "utility") do
+    format_component(hardpoints[name], "Utility Mounts")
+  end
+
+  defp format_hardpoint(hardpoints, name) do
+    format_component(hardpoints[name], "#{String.capitalize(name)} Hardpoints")
+  end
+
+  defp format_internal(internals, index) do
+    format_component(internals[index], "Size #{index} Components")
   end
 end
