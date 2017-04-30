@@ -1,5 +1,5 @@
 .jumbotron
-  h2 = gettext "Welcome to Starship Designer"
+  h2 = gettext "Welcome to Ship Designer"
   p.lead
     ' An open source web application for creating, storing and sharing ship designs for the game
     a href="http://www.elitedangerous.com" Elite: Dangerous
