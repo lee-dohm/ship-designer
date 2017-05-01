@@ -27,6 +27,8 @@ defmodule ShipDesigner.Ship do
     field :sensor_size, :integer
     field :fuel_tank_size, :integer
 
+    has_many :designs, ShipDesigner.Design
+
     timestamps()
   end
 

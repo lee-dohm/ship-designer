@@ -26,6 +26,8 @@ html
             a href="#{module_path(@conn, :index)}" = gettext "Modules"
           li#ships-tab role="presentation"
             a href="#{ship_path(@conn, :index)}" = gettext "Ships"
+          li#designs-tab role="presentation"
+            a href="#{design_path(@conn, :index)}" = gettext "Designs"
 
       = if get_flash(@conn, :info) do
         p.alert.alert-info role="alert" = get_flash(@conn, :info)

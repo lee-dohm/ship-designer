@@ -15,6 +15,8 @@ defmodule ShipDesigner.Module do
     field :power_draw, :float
     field :details, :map
 
+    many_to_many :designs, ShipDesigner.Design, join_through: "designs_modules"
+
     timestamps()
   end
 

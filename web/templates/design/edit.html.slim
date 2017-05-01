@@ -1,0 +1,5 @@
+h2 Edit design
+
+= render "form.html", changeset: @changeset, action: design_path(@conn, :update, @design)
+
+= link "Back", to: design_path(@conn, :index)

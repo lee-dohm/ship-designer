@@ -1,0 +1,10 @@
+h2 Show design
+
+ul
+  li
+    strong Name:&nbsp;
+    = @design.name
+
+= link "Edit", to: design_path(@conn, :edit, @design)
+| &nbsp;
+= link "Back", to: design_path(@conn, :index)

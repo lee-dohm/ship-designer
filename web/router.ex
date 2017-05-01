@@ -18,6 +18,7 @@ defmodule ShipDesigner.Router do
 
     get "/", PageController, :index
 
+    resources "/designs", DesignController
     resources "/modules", ModuleController, only: [:index, :show]
     resources "/ships", ShipController, only: [:index, :show]
   end

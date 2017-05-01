@@ -1,0 +1,19 @@
+h2 Listing designs
+
+table.table
+  thead
+    tr
+      th Name
+      th
+  tbody
+    = for design <- @designs do
+      tr
+        td= design.name
+        td class="text-right"
+          = link "Show", to: design_path(@conn, :show, design), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: design_path(@conn, :edit, design), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: design_path(@conn, :delete, design), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New design", to: design_path(@conn, :new)
