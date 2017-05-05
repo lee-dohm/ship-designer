@@ -29,7 +29,8 @@ defmodule ShipDesigner.Mixfile do
         :logger,
         :gettext,
         :phoenix_ecto,
-        :postgrex
+        :postgrex,
+        :timex
       ]
     ]
   end
