@@ -11,11 +11,25 @@
 # and so on) as they will fail if something goes wrong.
 
 defmodule Seeds do
+  alias ShipDesigner.Design
   alias ShipDesigner.Module
   alias ShipDesigner.Repo
   alias ShipDesigner.Ship
 
   @seconds_in_a_day 86_400
+
+  def insert_file(file, fn) do
+    file
+    |> File.read!
+    |> Poison.Parser.parse!
+    |> Enum.each(fn)
+  end
+
+  def insert_design(record) do
+    changeset = Design.changeset(%Design{}, to_design(record))
+
+    Repo.insert!(changeset)
+  end
 
   def insert_module(record) do
     changeset = Module.changeset(%Module{}, to_module(record))
@@ -45,6 +59,13 @@ defmodule Seeds do
   end
 
   defp refresh(_, _, _), do: nil
+
+  defp to_design(record) do
+    %{
+      name: record["name"],
+      description: record["description"]
+    }
+  end
 
   defp to_module(record) do
     %{
@@ -91,12 +112,6 @@ end
 
 Seeds.refresh("priv/repo/modules.json", "https://eddb.io/archive/v5/modules.json")
 
-"priv/repo/modules.json"
-|> File.read!
-|> Poison.Parser.parse!
-|> Enum.each(&Seeds.insert_module/1)
-
-"priv/repo/ships.json"
-|> File.read!
-|> Poison.Parser.parse!
-|> Enum.each(&Seeds.insert_ship/1)
+Seeds.insert_file("priv/repo/modules.json", &Seeds.insert_module/1)
+Seeds.insert_file("priv/repo/ships.json", &Seeds.insert_ship/1)
+Seeds.insert_file("priv/repo/designs.json", &Seeds.insert_design/1)
